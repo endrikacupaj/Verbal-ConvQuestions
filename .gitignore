@@ -1,0 +1,9 @@
+__pycache__
+.vector_cache
+
+old_data
+experiments/data/*/
+experiments/data/pretrain_data.py
+data/pretrain_data.py
+
+experiments/experiments

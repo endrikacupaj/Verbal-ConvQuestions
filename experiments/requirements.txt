@@ -1,0 +1,8 @@
+accelerate==0.2.1
+torch_nightly==1.1.0.dev20190502
+tqdm==4.40.2
+transformers==4.5.1
+numpy==1.17.4
+nltk==3.4.5
+scikit_learn==0.24.2
+torch==1.8.1
