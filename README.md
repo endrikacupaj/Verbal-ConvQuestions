@@ -5,7 +5,8 @@ We introduce a new dataset for conversational question answering over Knowledge 
 We additionally perform an error analysis that details the rates of models' mispredictions in specified categories. Our proposed dataset (Verbal-ConvQuestions) extended with answer verbalization is publicly **available** with detailed documentation on its usage for wider **utility**.
 
 ## Dataset
-### Statistics
+
+Similar to [ConvQuestions](https://convex.mpi-inf.mpg.de/) the dataset contains three sets (Train, Val and Test). 
 
 Dataset | Train | Val | Test
 --------|-------|-----|-----
@@ -14,6 +15,31 @@ Paraphrased Question | 68,447 | 22,368 | 22,400
 Paraphrased Answer | 68,447 | 22,368 | 22,400
 Avg. Question length | 8.48 | 8.75 | 8.01
 Avg. Answer length | 8.82 | 9.19 | 8.39
+
+The dataset is stored in JSON files and each instance has the following format:
+
+```bash
+{
+    "conv_id": "Unique conversation id in the dataset",
+    "domain": "Domain of the conversation",
+    "seed_entity": "Wikidata topic entity of the conversation",
+    "seed_entity_text": "Wikidata label of topic entity",
+    "questions": [ # list of questions in the conversation
+        {
+            "question_id": "Unique question id in the conversation",
+            "turn": "Actual turn of the question",
+            "question": "Question",
+            "answer": "Answer of question extracted from Wikidata",
+            "answer_text": "Text Answer of question",
+            "verbalized_answer": "Initial verbalized answer"
+            "paraphrased_answer": ["List of paraphrased answers"],
+            "paraphrased_question": ["List of paraphrased questions"],
+        },
+        ...
+    ]
+}
+```
+
 
 ## Experiments
 ### Requirements and Setup
